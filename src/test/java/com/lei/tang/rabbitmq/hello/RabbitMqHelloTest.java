@@ -1,6 +1,7 @@
 package com.lei.tang.rabbitmq.hello;
 
 import com.lei.tang.rabbitmq.domain.User;
+import com.lei.tang.rabbitmq.exchange.fanout.FanoutRabbitSender;
 import com.lei.tang.rabbitmq.exchange.topic.TopicRabbitSender;
 import com.lei.tang.rabbitmq.ordinary.HelloSender;
 import org.junit.Test;
@@ -22,6 +23,9 @@ public class RabbitMqHelloTest {
 
     @Autowired
     TopicRabbitSender topicRabbitSender;
+
+    @Autowired
+    FanoutRabbitSender fanoutRabbitSender;
 
     /**
      * 单个测试
@@ -53,6 +57,13 @@ public class RabbitMqHelloTest {
 
         for (int i = 1; i <= 10; i++) {
             topicRabbitSender.send2(new User(Long.valueOf(i),"b" ));
+        }
+    }
+
+    @Test
+    public void fanout(){
+        for (int i = 1; i <= 5; i++) {
+            fanoutRabbitSender.send("测试Fanout交换机"+i);
         }
     }
 }
