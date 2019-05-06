@@ -1,5 +1,7 @@
 package com.lei.tang.rabbitmq.hello;
 
+import com.lei.tang.rabbitmq.domain.User;
+import com.lei.tang.rabbitmq.exchange.topic.TopicRabbitSender;
 import com.lei.tang.rabbitmq.ordinary.HelloSender;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -16,7 +18,10 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class RabbitMqHelloTest {
 
     @Autowired
-    private HelloSender helloSender;
+    HelloSender helloSender;
+
+    @Autowired
+    TopicRabbitSender topicRabbitSender;
 
     /**
      * 单个测试
@@ -37,6 +42,17 @@ public class RabbitMqHelloTest {
     public void oneToMany() throws Exception {
         for (int i = 1; i <= 10; i++) {
             helloSender.send(String.valueOf(i));
+        }
+    }
+
+    @Test
+    public void topic() {
+        for (int i = 1; i <= 10; i++) {
+            topicRabbitSender.send1(new User(Long.valueOf(i), "a"));
+        }
+
+        for (int i = 1; i <= 10; i++) {
+            topicRabbitSender.send2(new User(Long.valueOf(i),"b" ));
         }
     }
 }
