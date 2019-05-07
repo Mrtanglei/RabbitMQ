@@ -66,4 +66,9 @@ public class RabbitMqHelloTest {
             fanoutRabbitSender.send("测试Fanout交换机"+i);
         }
     }
+
+    @Test
+    public void log(){
+        helloSender.log();
+    }
 }

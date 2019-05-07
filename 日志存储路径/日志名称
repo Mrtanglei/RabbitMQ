@@ -1,0 +1,8 @@
+2019-05-07 15:31:24 INFO [main] c.l.t.r.hello.RabbitMqHelloTest [StartupInfoLogger.java : 50] Starting RabbitMqHelloTest on tanglei.local with PID 23545 (started by tanglei in /Users/tanglei/Documents/ideaworkspace/git_repositorys/rabbitmq)
+2019-05-07 15:31:24 DEBUG [main] c.l.t.r.hello.RabbitMqHelloTest [StartupInfoLogger.java : 53] Running with Spring Boot v2.1.4.RELEASE, Spring v5.1.6.RELEASE
+2019-05-07 15:31:24 INFO [main] c.l.t.r.hello.RabbitMqHelloTest [SpringApplication.java : 675] No active profile set, falling back to default profiles: default
+2019-05-07 15:31:26 INFO [main] c.l.t.r.hello.RabbitMqHelloTest [StartupInfoLogger.java : 59] Started RabbitMqHelloTest in 4.032 seconds (JVM running for 6.181)
+2019-05-07 15:31:27 INFO [main] c.l.t.rabbitmq.ordinary.HelloSender [HelloSender.java : 28] =======info
+2019-05-07 15:31:27 DEBUG [main] c.l.t.rabbitmq.ordinary.HelloSender [HelloSender.java : 29] =========debug
+2019-05-07 15:31:27 WARN [main] c.l.t.rabbitmq.ordinary.HelloSender [HelloSender.java : 30] =========warn
+2019-05-07 15:31:27 ERROR [main] c.l.t.rabbitmq.ordinary.HelloSender [HelloSender.java : 32] =========error

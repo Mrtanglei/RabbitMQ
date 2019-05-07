@@ -23,4 +23,12 @@ public class HelloSender {
         //定义的队列名称需在RabbitMQ服务器中存在，需与接收者一致
         amqpTemplate.convertAndSend("hello", messgae);
     }
+
+    public void log(){
+        log.info("=======info");
+        log.debug("=========debug");
+        log.warn("=========warn");
+        log.trace("=========trace");
+        log.error("=========error");
+    }
 }
